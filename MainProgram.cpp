@@ -12,9 +12,8 @@ PART 1 — Variables and Arithmetic
 
 int addNumbers(int a, int b)
 {
-    // TODO
-    // Return the sum of a and b
-
+    int sum = a+b;
+    return sum;
 }
 
 
@@ -27,9 +26,13 @@ PART 2 — Loops
 
 int sumUpToN(int n)
 {
-    // TODO
-    // Using a loop calculate the sum
-    // 1 + 2 + 3 + ... + n
+    int sum =0;
+    for(int i=0;i <= n; i++){
+    sum += i;
+        
+    }
+    return sum;
+    
 }
 
 
@@ -42,8 +45,13 @@ PART 3 — Vectors
 
 int findMaximum(vector<int> numbers)
 {
-    // TODO
-    // Return the largest number in the vector
+    int max = numbers[0];
+    for(int i = 0;i<numbers.size();i++){
+        if(numbers[i + 1] >numbers[i]){
+            max = numbers[i + 1];
+        }
+    }
+    return max;
 }
 
 
@@ -56,9 +64,14 @@ PART 4 — Strings
 
 string reverseString(string text)
 {
-    // TODO
-    // Return the reversed version of the string
+    string reversed = "";
+    for(int i = text.length() - 1; i >= 0;i--){
+        reversed += text[i];
+    }
+    return reversed;
 }
+
+
 
 
 
@@ -70,23 +83,29 @@ PART 5 — Simple Class
 
 class Student
 {
-private:
+private:   //members can access only in this class
     string name;
     int grade;
 
-public:
+public:   // everyone can access them
 
     // TODO
-    // Create a constructor that receives
+    // Create a constructor that  constructer ismi class la aynı olan fonksiyona denir
     // name and grade
-
+     Student(string n , int g){
+         name = n;
+         grade = g;
+     }
 
     // TODO
     // Create a function printInfo()
     // that prints:
     // Name: <name>
     // Grade: <grade>
-
+    void printInfo(){
+        cout << "Name: " << name << endl;
+        cout << "Grade: " << grade << endl;
+    }
 };
 
 
